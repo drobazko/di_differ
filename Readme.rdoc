@@ -1,0 +1,58 @@
+== Description
+
+DiDiffer computes the difference between two files using the longest common subsequence (LCS) algorithm. 
+It includes utilities to create a simple plain diff output format.
+
+== Synopsis
+
+  File1
+  -------
+  Some
+  Simple 
+  Text 
+  File
+
+  File2
+  -------
+  Another
+  Text
+  File
+  With
+  Additional
+  Lines
+
+  Diff
+  ----------------
+  1 * Some|Another
+  2 - Simple
+  3   Text
+  4   File
+  5 + With
+  6 + Additional
+  7 + Lines
+
+  Longest Common Subsequence
+  --------------------------
+  ['Text', 'File']
+
+  Keywords
+  --------------------------
+  * - changed value
+  - removed value
+  + added value
+  <empty> value not changed
+
+== Install
+  
+  gem install di_differ
+
+== Using
+
+  d = Differ.new('<path-to-file-1>', 'path-to-file-2')
+  
+  # just diff
+  d.diff
+
+  # longest common subsequence
+  d.common_subsequence
+
